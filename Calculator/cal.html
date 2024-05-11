@@ -1,33 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="cal.css" />
-    <title>Simple Calculator</title>
-  </head>
-  <body>
-    <div id="calculator-body">
-      <input type="text" id="display" readonly />
-      <div class="button-container">
-        <button class="button" onclick="press_c_button()">C</button>
-        <button class="button" onclick="press_button(1)">1</button>
-        <button class="button" onclick="press_button(2)">2</button>
-        <button class="button" onclick="press_button('+')">+</button>
-        <button class="button" onclick="press_button(3)">3</button>
-        <button class="button" onclick="press_button(4)">4</button>
-        <button class="button" onclick="press_button('-')">-</button>
-        <button class="button" onclick="press_button(5)">5</button>
-        <button class="button" onclick="press_button(6)">6</button>
-        <button class="button" onclick="press_button('*')">*</button>
-        <button class="button" onclick="press_button(7)">7</button>
-        <button class="button" onclick="press_button(8)">8</button>
-        <button class="button" onclick="press_button('/')">/</button>
-        <button class="button" onclick="press_equal_button()">=</button>
-        <button class="button" onclick="press_button(9)">9</button>
-        <button class="button" onclick="press_button(0)">0</button>
-        <button class="button" onclick="press_button('.')">.</button>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    
+</head>
+<body>
+    <div id="container">
+        
+        <div id="calculator">
+            <h2 id="calc">Claculator</h2>
+            <div id="input-box">
+                <input type="text" id="display" readonly>
+            </div>
+            <!-- onclick ka use tab karte hai jab hume kisis buttton ko click karne pe kuch action chahiye hota hai  -->
+            <div class="button-container">
+                <button class="button-box" onclick="
+                currentDisplay = '';
+                document.querySelector('#display').value = currentDisplay;
+                ">C</button>
+              
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '1';
+                // yaha .querryselector kisi bhi tag ya id ko select karke usme change lane ke liye hota hai
+                document.querySelector('#display').value = currentDisplay;
+                ">1</button>
+    
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '2';
+                document.querySelector('#display').value = currentDisplay;
+                ">2</button>
+                
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '+';
+                document.querySelector('#display').value = currentDisplay;
+                ">+</button>
+    
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '3';
+                document.querySelector('#display').value = currentDisplay;
+                ">3</button>
+              
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '4';
+                document.querySelector('#display').value = currentDisplay;
+                ">4</button>
+    
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '-';
+                document.querySelector('#display').value = currentDisplay;
+                ">-</button>
+    
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '5';
+                document.querySelector('#display').value = currentDisplay;
+                ">5</button>
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '6';
+                document.querySelector('#display').value = currentDisplay;
+                ">6</button>
+    
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '*';
+                document.querySelector('#display').value = currentDisplay;
+                ">*</button>
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '7';
+                document.querySelector('#display').value = currentDisplay;
+                ">7</button>
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '8';
+                document.querySelector('#display').value = currentDisplay;
+                ">8</button>
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '/';
+                document.querySelector('#display').value = currentDisplay;
+                ">/</button>
+                <button class="button-box" onclick="
+                    currentDisplay = eval(currentDisplay);
+                document.querySelector('#display').value = currentDisplay;
+                ">=</button>
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '9';
+                document.querySelector('#display').value = currentDisplay;
+                ">9</button>
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '0';
+                document.querySelector('#display').value = currentDisplay;
+                ">0</button>
+                <button class="button-box" onclick="
+                currentDisplay = currentDisplay + '.';
+                document.querySelector('#display').value = currentDisplay;
+                ">.</button>      
+            </div>
+        </div>
     </div>
-
-    <script src="cal.js"></script>
-  </body>
+    <script>
+        let currentDisplay = '';
+        // .innerText ki jagah value use kiye hai kyuki input me koi text nhi dalna tha wo read mode me tha to value likh diye the 
+        document.querySelector('#display').value = currentDisplay;
+    </script>   
+</body>
 </html>
